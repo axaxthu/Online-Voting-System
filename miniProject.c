@@ -146,12 +146,11 @@ void displayresult(){
 
 
 int main(){
-	int i,max=100;
+	
 	int age;
 	char name[50];
 	system("cls");
-	for(i=0;i<max;i++)
-	{printf("\t\t\t\tWELCOME TO ONLINE VOTING SYSTEM\n");
+	printf("\t\t\t\tWELCOME TO ONLINE VOTING SYSTEM\n");
 	printf("1.REGISTER\n");
 	printf("2.LOGIN\n");
 	printf("3.UPDATE PROFILE\n");
@@ -192,6 +191,6 @@ int main(){
 	}
 	printf("CURRENTLY LEADING\n");
 	displayresult();
-	}
+	
 	return 0;	
 }

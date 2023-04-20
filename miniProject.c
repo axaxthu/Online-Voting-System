@@ -69,14 +69,14 @@ void login(){
 		int choice;
 		scanf("%d",&choice);
 		switch(choice){
-			case 1: vote();
+			case 1: posi_vote();
 			break;
 			case 2: posi_vote();
 			break;
 			case 3: update();
 			break;
 			default:
-			printf("INVALID INPUT"\n);
+			printf("INVALID INPUT\n");
 		}
 	}		
 	
@@ -174,7 +174,7 @@ int main(){
 		scanf("%s",&v.password);
 		printf("Enter YOUR ADDRESS\n");
 		scanf("%s",&v.address);
-		v.voterid=c5++;
+		v.voterid=rand();
 		registration(v);
 		break;
 	case 2:

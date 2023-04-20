@@ -76,7 +76,7 @@ void login(){
 			case 3: update();
 			break;
 			default:
-			printf("INVALID INPUT");
+			printf("INVALID INPUT"\n);
 		}
 	}		
 	
@@ -172,7 +172,7 @@ int main(){
 		scanf("%s",&v.username);
 		printf("ENTER A PASSWORD\n");
 		scanf("%s",&v.password);
-		printf("Enter A ADDRESS");
+		printf("Enter YOUR ADDRESS\n");
 		scanf("%s",&v.address);
 		v.voterid=c5++;
 		registration(v);

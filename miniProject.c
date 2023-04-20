@@ -67,7 +67,7 @@ void login(){
 		printf("3.UPDATE PROFILE\n");
 		printf("ENTER YOUR CHOICE\n");
 		int choice;
-		scanf("%d",choice);
+		scanf("%d",&choice);
 		switch(choice){
 			case 1: vote();
 			break;

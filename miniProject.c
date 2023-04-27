@@ -1,3 +1,5 @@
+
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -25,7 +27,7 @@ void registration(struct voter v){
 		printf("ERROR OPENING FILE\n");
 		exit(1);
 	}
-	fprintf(log,"%s %s %s %d %d %s\n",v.username,v.password,v.name,v.age,v.voterid,v.address);
+	fprintf(log,"%s %s %s %d %d %s\n",v.username,v.password,v.name,v.age,v.address);
 	fclose(log);
     system("CLS");
     printf("REGISTRATION SUCCESSFUL\nNOW PLEASE LOGIN\n");
@@ -47,7 +49,7 @@ void login(){
 		printf("ERROR OPENIING FILE\n");
 		exit(1);
 	}
-	while(fscanf(fp1,"%s %s %s %d %d %s\n",v.username,v.password,v.name,&v.age,&v.voterid,v.address)!=EOF){
+	while(fscanf(fp1,"%s %s %s %d %d %s\n",v.username,v.password,v.name,&v.age,v.address)!=EOF){
 		 if (strcmp(v.username,username) == 0 && strcmp(v.password,password) == 0){
 			flag=1;
 			printf("YOU HAVE SUCCESSFULLY LOGGED IN");
@@ -102,6 +104,7 @@ void posi_vote(){
 void vote()
 {	struct voter v;
 	int vote;
+
 	printf("ENTER USERNAME:");
 	scanf("%s",v.username);
 	printf("ENTER PASSWORD:");
@@ -168,29 +171,34 @@ int main(){
 		scanf("%s",&v.name);
 		printf("ENTER YOUR AGE\n");
 		scanf("%d",&v.age);
+        
 		printf("ENTER A USERNAME(NO SPECIAL CHARACERS ALLOWED)\n");
 		scanf("%s",&v.username);
 		printf("ENTER A PASSWORD\n");
 		scanf("%s",&v.password);
 		printf("Enter YOUR ADDRESS\n");
 		scanf("%s",&v.address);
-		v.voterid=rand();
-		registration(v);
+        if(v.age>=18){
+            registration(v);
+        }
+		else{printf("YOU ARE NOT ELIGIBLE TO VOTE\n");
+		}
 		break;
 	case 2:
 	login();
 	break;
 	case 3:update();
 	break;
-	case 4:posi_vote();
+	case 4:login();
 	break;		
-	case 5:posi_vote();
+	case 5:login();
 	break;
 	default:
 	printf("WRONG CHOICE INPUT");		
 	}
-	printf("CURRENTLY LEADING\n");
+	printf("CURRENT LEADERBOARD\n");
 	displayresult();
 	
 	return 0;	
 }
+
